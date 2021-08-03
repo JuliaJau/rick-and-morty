@@ -1,9 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Varela+Round&display=swap');
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#app {
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  color: white;
+  background: #24282f;
+  height: 100%;
 }
 
 main {
-  margin: 0;
+  display: grid;
+  grid-template-rows: 3;
+  padding: 1em;
+}
+
+input {
+  padding: 0.5em;
+  margin-top: 1 em;
+}
+.characterContainer {
+  padding: 3em;
+  grid-gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
