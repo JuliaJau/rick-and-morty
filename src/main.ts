@@ -19,12 +19,46 @@ const characters: Character[] = [
     species: 'Human',
     origin: 'Earth (C-137)',
   },
+
+  {
+    name: 'Morty Smith"',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+
+  {
+    name: 'Summer Smith"',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+
+  {
+    name: 'Beth Smith"',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
+  {
+    name: 'Abadango Cluster Princess"',
+    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    origin: 'Earth (C-137)',
+  },
 ];
 
 const mainElement = createElement('main', {
   childElements: [
-    createElement('h1', { innerText: 'Rick and Morty' }),
-    createElement('p', { innerText: 'Characters' }),
+    createElement('div', {
+      className: 'hero-image',
+    }),
+    createElement('h1', { innerText: 'The Characters' }),
+
     createElement('input', {
       placeholder: 'Search for a character',
       className: 'searchbar',
