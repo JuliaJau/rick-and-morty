@@ -1,34 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Varela+Round&display=swap');
-
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
-
-h1 {
-  font-size: 2rem;
-}
-
 body {
   margin: 0;
   height: 100vh;
 }
 
 #app {
-  font-family: 'Varela Round', sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  background: #24282f;
+  background: #000;
   height: 100%;
 }
 
-main {
-  display: grid;
-  grid-template-rows: 3;
-  padding: 1em;
+.hero-image {
+  height: 700px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/270/696/928/rick-and-morty-wallpaper-preview.jpg);
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 input {
@@ -36,8 +35,14 @@ input {
   margin-top: 1 em;
 }
 .characterContainer {
-  padding: 3em;
+  padding: 2em;
   grid-gap: 2em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+@media (max-width: 500px) {
+  .hero-image {
+    width: 100%;
+  }
 }
