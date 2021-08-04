@@ -1,6 +1,15 @@
 import './style.css';
 import { createElement } from './utils/createElement';
+import type { Character } from './types';
 import { createCharacterCard } from './components/character/character';
+
+const character: Character = {
+  name: 'Jerry Smith',
+  thumbnail: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
+  status: 'Alive',
+  species: 'Human',
+  origin: 'Earth (C-137)',
+};
 
 const mainElement = createElement('main', {
   childElements: [
@@ -13,15 +22,14 @@ const mainElement = createElement('main', {
     createElement('div', {
       className: 'characterContainer',
       childElements: [
-        createCharacterCard(),
-        createCharacterCard(),
-        createCharacterCard(),
+        createCharacterCard(character),
+        createCharacterCard(character),
+        createCharacterCard(character),
       ],
     }),
   ],
 });
 
-const app = document.querySelector<HTMLDivElement>('#app');
 /*
 const mainElement = document.createElement('main');
 
@@ -36,6 +44,8 @@ input.placeholder = 'Search for a character...';
 
 mainElement.append(title, para, input);
 */
+
+const app = document.querySelector<HTMLDivElement>('#app');
 
 if (app !== null) {
   app.append(mainElement);
