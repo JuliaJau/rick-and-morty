@@ -1,4 +1,4 @@
-.character-card {
+.card {
   background: #3c3e44;
   display: grid;
   grid-auto-flow: column;
@@ -8,17 +8,23 @@
   height: 13em;
 }
 
-.character-card__image {
+.card__image {
   height: inherit;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
 }
 
-.character-card__info {
+.card__info {
   text-align: left;
   display: grid;
   padding: 1em;
 }
-.character-card__info * {
+.card__info * {
   margin: 0;
+}
+
+@media (min-width: 600px) {
+  .card {
+    height: 20em;
+  }
 }
