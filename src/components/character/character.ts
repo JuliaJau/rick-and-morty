@@ -13,11 +13,11 @@ export function createCharacterCard({
     className: style.card,
     childElements: [
       createElement('img', {
-        className: style['card__image'],
+        className: style.image,
         src: thumbnail,
       }),
       createElement('article', {
-        className: style['card__info'],
+        className: style.info,
         childElements: [
           createElement('h2', { innerText: name }),
           createElement('div', {
@@ -31,7 +31,7 @@ export function createCharacterCard({
             ],
           }),
 
-          createElement('h5', { innerText: 'Last known location:' }),
+          createElement('h5', { innerText: 'Origin' }),
           createElement('p', { innerText: origin }),
         ],
       }),
