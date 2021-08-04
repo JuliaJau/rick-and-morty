@@ -1,27 +1,38 @@
-import './character.css';
+import style from './character.module.css';
+import type { Character } from '../../types';
 import { createElement } from '../../utils/createElement';
 
-export function createCharacterCard(): HTMLElement {
+export function createCharacterCard({
+  thumbnail,
+  name,
+  status,
+  species,
+  origin,
+}: Character): HTMLElement {
   return createElement('div', {
-    className: 'character-card',
+    className: style.card,
     childElements: [
       createElement('img', {
-        className: 'character-card__image',
-        src: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
+        className: style['card__image'],
+        src: thumbnail,
       }),
       createElement('article', {
-        className: 'character-card__info',
+        className: style['card__info'],
         childElements: [
-          createElement('h2', { innerText: 'Jerry Smith' }),
+          createElement('h2', { innerText: name }),
           createElement('div', {
             childElements: [
               createElement('h5', { innerText: 'Status:' }),
-              createElement('p', { innerText: '💚 Alive - Human' }),
+              createElement('p', {
+                innerText: `${
+                  status === 'Alive' ? '💚' : '💀'
+                } ${status} - ${species}`,
+              }),
             ],
           }),
 
-          createElement('h5', { innerText: 'Origin:' }),
-          createElement('p', { innerText: 'Earth (Replacement Dimension)' }),
+          createElement('h5', { innerText: 'Last known location:' }),
+          createElement('p', { innerText: origin }),
         ],
       }),
     ],
