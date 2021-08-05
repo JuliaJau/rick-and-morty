@@ -1,8 +1,48 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background: #000;
+  height: 100%;
+}
+
+.hero-image {
+  height: 700px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/270/696/928/rick-and-morty-wallpaper-preview.jpg);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+input {
+  padding: 0.5em;
+  margin-top: 1 em;
+}
+.characterContainer {
+  padding: 2em;
+  grid-gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+@media (max-width: 500px) {
+  .hero-image {
+    width: 100%;
+  }
 }
