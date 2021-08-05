@@ -4,56 +4,9 @@ import type { Character } from './types';
 import { createCharacterCard } from './components/character/character';
 import { getCharacters } from './utils/api';
 
-getCharacters();
+//console.log(await getCharacters());
 
-const characters: Character[] = [
-  {
-    name: 'Jerry Smith',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-
-  {
-    name: 'Rick Sanchez',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-
-  {
-    name: 'Morty Smith"',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-
-  {
-    name: 'Summer Smith"',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-
-  {
-    name: 'Beth Smith"',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-  {
-    name: 'Abadango Cluster Princess"',
-    thumbnail: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
-    status: 'Alive',
-    species: 'Human',
-    origin: 'Earth (C-137)',
-  },
-];
+const characters: Character[] = await getCharacters();
 
 const mainElement = createElement('main', {
   childElements: [
