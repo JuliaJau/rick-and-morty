@@ -4,9 +4,25 @@ import type { Character } from './types';
 import { createCharacterCard } from './components/character/character';
 import { getCharacters } from './utils/api';
 
-//console.log(await getCharacters());
-
 const characters: Character[] = await getCharacters();
+
+const characterContainer = createElement('div', {
+  className: 'characterContainer',
+  childElements: characters.map((character) => createCharacterCard(character)),
+});
+
+const searchbar = createElement('input', {
+  placeholder: 'Search for a character',
+  oninput: async () => {
+    characterContainer.innerHTML = '';
+    const search = searchbar.value;
+    const filteredCharacters = await getCharacters(search);
+    const filteredCharacterElements = filteredCharacters.map(
+      (filteredCharacter) => createCharacterCard(filteredCharacter)
+    );
+    characterContainer.append(...filteredCharacterElements);
+  },
+});
 
 const mainElement = createElement('main', {
   childElements: [
@@ -15,16 +31,8 @@ const mainElement = createElement('main', {
     }),
     createElement('h1', { innerText: 'The Characters' }),
 
-    createElement('input', {
-      placeholder: 'Search for a character',
-      className: 'searchbar',
-    }),
-    createElement('div', {
-      className: 'characterContainer',
-      childElements: characters.map((character) =>
-        createCharacterCard(character)
-      ),
-    }),
+    searchbar,
+    characterContainer,
   ],
 });
 

@@ -1,7 +1,7 @@
 export type Character = {
   name: string;
   thumbnail: string;
-  status: string;
+  status: 'Alive' | 'Dead' | 'unknown';
   species: string;
   origin: string;
 };
@@ -9,7 +9,7 @@ export type Character = {
 export type CharacterFromAPI = {
   id: number;
   name: string;
-  status: string;
+  status: 'Alive' | 'Dead' | 'unknown';
   species: string;
   type: string;
   gender: string;
